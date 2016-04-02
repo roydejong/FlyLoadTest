@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/roydejong/FlyPHP.git",
-                "reference": "4da1f96661dd1b5ffa72c5be1cf820d8294b88b7"
+                "reference": "aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/4da1f96661dd1b5ffa72c5be1cf820d8294b88b7",
-                "reference": "4da1f96661dd1b5ffa72c5be1cf820d8294b88b7",
+                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55",
+                "reference": "aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 }
             ],
             "description": "The PHP Supercharger",
-            "time": "2016-04-02 15:39:52"
+            "time": "2016-04-02 17:43:39"
         },
         {
             "name": "symfony/console",
@@ -691,12 +691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "909b21d89a12c449b4362b19f69e1cc532cc6d82"
+                "reference": "612e505765b0d1e75308e300272771dad844692f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/909b21d89a12c449b4362b19f69e1cc532cc6d82",
-                "reference": "909b21d89a12c449b4362b19f69e1cc532cc6d82",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/612e505765b0d1e75308e300272771dad844692f",
+                "reference": "612e505765b0d1e75308e300272771dad844692f",
                 "shasum": ""
             },
             "require": {
@@ -755,7 +755,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-04-02 06:40:57"
+            "time": "2016-04-02 17:25:36"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
