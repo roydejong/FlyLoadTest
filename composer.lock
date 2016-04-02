@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/roydejong/FlyPHP.git",
-                "reference": "aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55"
+                "reference": "2cbc2529602e8d7f84f2397bbe37e82667a4a7d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55",
-                "reference": "aa0c5db940ddd62e0ab1b5ddc9b11a68fd5efa55",
+                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/2cbc2529602e8d7f84f2397bbe37e82667a4a7d4",
+                "reference": "2cbc2529602e8d7f84f2397bbe37e82667a4a7d4",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 }
             ],
             "description": "The PHP Supercharger",
-            "time": "2016-04-02 17:43:39"
+            "time": "2016-04-02 17:52:52"
         },
         {
             "name": "symfony/console",

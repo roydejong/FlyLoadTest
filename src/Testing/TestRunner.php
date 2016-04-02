@@ -3,6 +3,7 @@
 namespace FlyPHP\LoadTester\Testing;
 
 use FlyPHP\LoadTester\Config\TestProfile;
+use FlyPHP\LoadTester\Testing\Results\ClientResult;
 use FlyPHP\LoadTester\Testing\Timers\RuntimeLimiter;
 use FlyPHP\Runtime\Loop;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -36,6 +37,16 @@ class TestRunner
     {
         $this->profile = $profile;
         $this->output = new DummyOutput();
+    }
+
+    /**
+     * Returns the profile configuration for this runner.
+     *
+     * @return TestProfile
+     */
+    public function getProfile()
+    {
+        return $this->profile;
     }
 
     /**
@@ -94,6 +105,9 @@ class TestRunner
 
         (new RuntimeLimiter($this->profile->runtime))->start($loop);
 
+        // Warmup - prefetch DNS
+        dns_get_record($this->profile->host);
+
         // Run the event loop
         $this->output->writeln('Starting load test.');
         $loop->run();
@@ -102,6 +116,13 @@ class TestRunner
         $this->output->writeln('-------------------------------------------------------------------------------------');
         $this->output->writeln('Completed load test.');
         $this->output->writeln('-------------------------------------------------------------------------------------');
+    }
 
+    /**
+     * Processes a client result.
+     */
+    public function onResult(TestClient $client, ClientResult $result)
+    {
+        $this->output->writeln($result->__toString());
     }
 }
