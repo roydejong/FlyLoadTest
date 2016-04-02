@@ -13,7 +13,7 @@ class TestProfile
      * @see $port
      * @var string
      */
-    public $hostname;
+    public $host;
 
     /**
      * The port to test on.
@@ -52,4 +52,22 @@ class TestProfile
      * @var string[]
      */
     public $behaviors = [];
+
+    /**
+     * Parses raw user config data into a TestProfile object.
+     *
+     * @param mixed $yaml
+     * @return TestProfile
+     */
+    public static function parse($yaml)
+    {
+        $profile = new TestProfile();
+        $profile->host = $yaml['host'];
+        $profile->port = $yaml['port'];
+        $profile->runtime = $yaml['runtime'];
+        $profile->from = $yaml['from'];
+        $profile->to = $yaml['to'];
+        $profile->behaviors = [];
+        return $profile;
+    }
 }
