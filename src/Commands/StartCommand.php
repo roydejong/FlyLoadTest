@@ -4,6 +4,7 @@ namespace FlyPHP\LoadTester\Commands;
 
 use FlyPHP\LoadTester\Config\ConfigLoader;
 use FlyPHP\LoadTester\FlyLoadTester;
+use FlyPHP\LoadTester\Testing\TestRunner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -49,7 +50,12 @@ class StartCommand extends Command
         $output->writeln("Discovered {$profileCount} load test profiles.");
 
         // Run the load test
-        $output->writeln('<error>TODO: Load tests</error>');
+        foreach ($config->profiles as $testProfile) {
+            $runner = new TestRunner($testProfile);
+            $runner->setOutput($output);
+            $runner->run();
+        }
+
         $output->writeln('<comment>Load tester process complete.</comment>');
     }
 }

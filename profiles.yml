@@ -3,7 +3,7 @@ profiles:
     port: 8080
     runtime: 30
     from: 0
-    to: 1000
+    to: 100
     behaviors:
       - normal
       - broken

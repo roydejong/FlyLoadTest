@@ -30,7 +30,7 @@ class TestConfig
         $config->profiles = [];
 
         foreach ($yaml['profiles'] as $profileData) {
-            $config->profiles = TestProfile::parse($profileData);
+            $config->profiles[] = TestProfile::parse($profileData);
         }
 
         return $config;

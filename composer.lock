@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6b1fc8438245084352dc87bbae5fb9c1",
+    "hash": "dd1f19e27713713f7ef233025edc0d1a",
     "content-hash": "d4c90c9d623963a260948e367d120ffe",
     "packages": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/roydejong/FlyPHP.git",
-                "reference": "709a971f613cad9758ca18d64bc51adb5fc83596"
+                "reference": "4da1f96661dd1b5ffa72c5be1cf820d8294b88b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/709a971f613cad9758ca18d64bc51adb5fc83596",
-                "reference": "709a971f613cad9758ca18d64bc51adb5fc83596",
+                "url": "https://api.github.com/repos/roydejong/FlyPHP/zipball/4da1f96661dd1b5ffa72c5be1cf820d8294b88b7",
+                "reference": "4da1f96661dd1b5ffa72c5be1cf820d8294b88b7",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 }
             ],
             "description": "The PHP Supercharger",
-            "time": "2016-04-02 09:56:50"
+            "time": "2016-04-02 15:39:52"
         },
         {
             "name": "symfony/console",
