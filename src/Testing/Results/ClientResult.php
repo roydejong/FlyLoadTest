@@ -1,6 +1,7 @@
 <?php
 
 namespace FlyPHP\LoadTester\Testing\Results;
+
 use FlyPHP\Http\StatusCode;
 
 /**
@@ -37,16 +38,41 @@ class ClientResult
     public $resultCode = null;
 
     /**
+     * Was the attempt aborted due to a timeout?
+     *
+     * @var bool
+     */
+    public $timedOut = false;
+
+    /**
+     * Request start time.
+     *
+     * @var float
+     */
+    public $startTime = 0.0;
+
+    /**
+     * Request end time.
+     *
+     * @var float
+     */
+    public $endTime = 0.0;
+
+    /**
      * Decribes the result.
      *
      * @return string
      */
     public function __toString()
     {
+        $runTime = $this->endTime - $this->startTime;
+
         $str = "({$this->clientId}) ";
 
         if (!$this->connected) {
             $str .= " [***] Connect failed";
+        } else if ($this->timedOut) {
+            $str .= " [---] Timeout occurred, no (valid) response received";
         } else if (!$this->sent) {
             $str .= " [---] Send failed";
         } else if ($this->resultCode === null) {
@@ -56,6 +82,8 @@ class ClientResult
             $str .= StatusCode::getMessageForCode($this->resultCode);
         }
 
+        $roundedRuntime = round($runTime, 3);
+        $str .= " ({$roundedRuntime}sec)";
         return $str;
     }
 }

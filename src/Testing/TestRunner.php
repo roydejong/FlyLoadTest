@@ -92,7 +92,7 @@ class TestRunner
             $this->output->writeln('Client #' . $i . ' will be launched after ' . $startDelay . ' secs');
         }
 
-        $this->output->writeln('A test client will be added every ' . $startDelayPerClient. ' secs');
+        $this->output->writeln('A test client will be added every ' . $startDelayPerClient . ' secs');
 
         // Initialize the loop, register the timers, and make sure they are all ready to go
         $loop = new Loop();
@@ -112,6 +112,11 @@ class TestRunner
         $this->output->writeln('Starting load test.');
         $loop->run();
 
+        // Loop has exited, wait one second to collect final results
+        $this->output->writeln('Collecting final results...');
+        sleep(1);
+        $loop->cycle();
+
         // Print results
         $this->output->writeln('-------------------------------------------------------------------------------------');
         $this->output->writeln('Completed load test.');
@@ -123,6 +128,10 @@ class TestRunner
      */
     public function onResult(TestClient $client, ClientResult $result)
     {
+        if (!$result->endTime) {
+            $result->endTime = microtime(true);
+        }
+
         $this->output->writeln($result->__toString());
     }
 }
