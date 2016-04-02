@@ -3,6 +3,7 @@
 namespace FlyPHP\LoadTester\Testing;
 
 use FlyPHP\LoadTester\Config\TestProfile;
+use FlyPHP\LoadTester\Testing\Timers\RuntimeLimiter;
 use FlyPHP\Runtime\Loop;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tests\Fixtures\DummyOutput;
@@ -90,6 +91,8 @@ class TestRunner
         foreach ($clients as $client) {
             $client->start($loop);
         }
+
+        (new RuntimeLimiter($this->profile->runtime))->start($loop);
 
         // Run the event loop
         $this->output->writeln('Starting load test.');
