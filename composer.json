@@ -1,0 +1,25 @@
+{
+  "name": "flyphp/load-tester",
+  "description": "HTTP Load Testing powered by FlyPHP",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Roy de Jong",
+      "email": "email@roydejong.net"
+    }
+  ],
+  "require": {
+    "fly-php/fly": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "symfony/console": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "FlyPHP\\LoadTester\\": "src/",
+      "FlyPHP\\LoadTester\\Tests\\": "tests/"
+    }
+  }
+}

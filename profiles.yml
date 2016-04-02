@@ -1,0 +1,9 @@
+profiles:
+  - host: 127.0.0.1
+    port: 8080
+    runtime: 30
+    from: 0
+    to: 1000
+    behaviors:
+      - normal
+      - broken
