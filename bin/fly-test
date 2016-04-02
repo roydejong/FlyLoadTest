@@ -21,4 +21,4 @@ if (!class_exists('\FlyPHP\Fly')) {
 }
 
 $loadTester = new FlyLoadTester();
-$loadTester->start();
+$loadTester->init();
